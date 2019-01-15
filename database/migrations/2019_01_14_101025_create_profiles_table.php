@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTopicQuestionTable extends Migration
+class CreateProfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateTopicQuestionTable extends Migration
      */
     public function up()
     {
-        Schema::create('topic_question', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('module_id');
-            $table->integer('question_id');
+            $table->integer('user_id');
+            $table->string('favourite');
+            $table->string('strongest');
+            $table->string('weakest');
+            $table->string('bio');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateTopicQuestionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('topic_question');
+        Schema::dropIfExists('profiles');
     }
 }

@@ -17,6 +17,9 @@ class CreateTopicUserTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('topic_id');
+            $table->integer('in_pool')->default(1);
+            $table->integer('latest_score')->nullable();
+            $table->integer('overall_score')->nullable();
             $table->timestamps();
         });
     }

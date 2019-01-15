@@ -32,12 +32,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-link"><a href="/profile">Profile</a></li>
-                        <li class="nav-link"><a href="/topics">Topics</a></li>
-                        <li class="nav-link"><a href="/quiz/question_pool">Quiz</a></li>
-                    </ul>
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

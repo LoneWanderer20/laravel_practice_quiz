@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Auth;
+use App\Profile;
 
 class UsersController extends Controller
 {
@@ -26,11 +27,51 @@ class UsersController extends Controller
      */
     public function index()
     {
+        $user = User::find(auth()->user()->id);
+
+        $userInfo = $user->profile;
+
+        if (!$user->setup) {
+            return redirect('/profile/setup');
+        }
+
+        return view('profile', compact(['user', 'userInfo']));
+    }
+
+    public function setup()
+    {
         $user = auth()->user();
 
-        $topics = $user->topics;
+        return view('setup', compact('user'));
+    }
 
-        return view('profile', compact(['user', 'topics']));
+    public function profileSetup(Request $request)
+    {
+        $profile = new Profile;
+
+        $user = auth()->user();
+
+        try {
+            $profile->user_id = $user->id;
+            $profile->favourite = $request->favourite;
+            $profile->strongest = $request->strongest;
+            $profile->weakest = $request->weakest;
+            $profile->bio = $request->bio;
+
+            $profile->save();
+
+            try {
+                $user->setup = 1;
+                $user->save();
+            } catch(Exception $e) {
+                return redirect()-back()->with($e);
+            }
+
+        } catch (Exception $e) {
+            return redirect()-back()->with($e);
+        }
+
+        return $this->index();
     }
 
     /**

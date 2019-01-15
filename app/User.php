@@ -28,8 +28,14 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function topics()
+    public function profile()
     {
-        return $this->belongsToMany('App\Topic');
+        return $this->hasOne('App\Profile');
+    }
+
+    public function topic()
+    {
+        return $this->belongsToMany('App\Topic')
+            ->withPivot('latest_score', 'overall_score', 'in_pool');
     }
 }

@@ -13,9 +13,9 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.table-row {
-    outline: 2px solid green;
+.topic-row:hover {
+    outline: 2px solid lightgray;
 }
-.table-row>td {
-    outline: 2px solid green;
+.topic-row:active {
+    outline: none;
 }

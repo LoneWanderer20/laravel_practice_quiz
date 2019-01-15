@@ -8,24 +8,19 @@
                 <div class="card-header">Add Topics</div>
 
                 <div class="card-body">
-
-
-                           <form class="card card-sm mb-5">
+                          <!-- <form class="card card-sm mb-5">
                                <div class="card-body row no-gutters align-items-center">
                                    <div class="col-auto">
                                        <i class="fas fa-search h4 text-body"></i>
                                    </div>
-                                   <!--end of col-->
                                    <div class="col">
                                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">
                                    </div>
-                                   <!--end of col-->
                                    <div class="col-auto">
-                                       <button class="btn btn-lg btn-success" type="submit">Search</button>
+                                       <button class="btn btn-lg btn-primary" type="submit">Search</button>
                                    </div>
-                                   <!--end of col-->
                                </div>
-                           </form>
+                           </form>-->
 
 
                     <table class="table">
@@ -39,35 +34,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($topics as $topic)
                             <tr>
-                                <th scope="row">Science</th>
-                                <td>345</td>
-                                <td><button>Add</button></td>
+                                <th scope="row">{{ $topic->name }}</th>
+                                <td>{{ $topic->question_count }}</td>
+                                <td><a data-table_id="{{ $topic->id }}" class="btn btn-primary" href="/topics/add/{{ $topic->id }}">Add</a></td>
                             </tr>
-                            <tr>
-                                <th scope="row">History</th>
-                                <td>234</td>
-                                <td><button>Add</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Laravel</th>
-                                <td>287</td>
-                                <td><button>Add</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">React</th>
-                                <td>126</td>
-                                <td><button>Add</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">React-native</th>
-                                <td>210</td>
-                                <td><button>Add</button></td>
+                            @endforeach
                         </tbody>
                     </table>
+
+                    <a class="btn btn-primary" href="/topics">Back</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

@@ -9,94 +9,66 @@
 
                 <div class="card-body">
 
-                    <table class="table">
-                        <h4 style="margin-bottom: 20px;">In QuestionPool</h4>
-                        <thead>
-                            <tr>
-                                <th scope="col">Subjects</th>
-                                <th scope="col">Number of Questions</th>
-                                <th scope="col">Current Level</th>
-                                <th scope="col">Add</th>
+                    @if (count($question_pool["in_pool"]) > 0 || count($question_pool["out_pool"]))
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">Science</th>
-                                <td>345</td>
-                                <td>9</td>
-                                <td><button>Add</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">History</th>
-                                <td>234</td>
-                                <td>3</td>
-                                <td><button>Add</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Laravel</th>
-                                <td>287</td>
-                                <td>7</td>
-                                <td><button>Add</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">React</th>
-                                <td>126</td>
-                                <td>6</td>
-                                <td><button>Add</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">React-native</th>
-                                <td>210</td>
-                                <td>4</td>
-                                <td><button>Add</button></td>
-                        </tbody>
-                    </table>
+                    <h4 style="margin-bottom: 20px;">In</h4>
+                    @if (count($question_pool["in_pool"]) > 0 )
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Subjects</th>
+                                    <th scope="col">Number of Questions</th>
+                                    <th scope="col">Current Level</th>
+                                    <th scope="col">Add</th>
 
-                    <table class="table">
-                        <h4 style="margin-bottom: 20px;">Out QuestionPool</h4>
-                        <thead>
-                            <tr>
-                                <th scope="col">Subjects</th>
-                                <th scope="col">Number of Questions</th>
-                                <th scope="col">Remove</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">Science</th>
-                                <td>345</td>
-                                <td>9</td>
-                                <td><button>Remove</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">History</th>
-                                <td>234</td>
-                                <td>9</td>
-                                <td><button>Remove</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Laravel</th>
-                                <td>287</td>
-                                <td>9</td>
-                                <td><button>Remove</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">React</th>
-                                <td>126</td>
-                                <td>9</td>
-                                <td><button>Remove</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">React-native</th>
-                                <td>210</td>
-                                <td>9</td>
-                                <td><button>Remove</button></td>
-                        </tbody>
-                    </table>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for ($i = 0; $i < count($question_pool["in_pool"]); $i++)
+                                <tr>
+                                    <th scope="row">{{ $question_pool["in_pool"][$i]["name"] }}</th>
+                                    <td>{{ $question_pool["in_pool"][$i]["question_count"] }}</td>
+                                    <td>9</td>
+                                    <td><a href="/quiz/question_pool/add/{{ $question_pool['in_pool'][$i]['id'] }}" class="btn btn-success">Add</a></td>
+                                </tr>
+                                @endfor
+                            </tbody>
+                        </table>
+                    @else
+                         <p>You don't have any questions loaded in the question pool. You need to add some before you proceed!</p>
+                    @endif
+
+                    <h4 style="margin-bottom: 20px;">Out</h4>
+                    @if (count($question_pool["out_pool"]) > 0 )
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Subjects</th>
+                                    <th scope="col">Number of Questions</th>
+                                    <th scope="col">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for ($i = 0; $i < count($question_pool["out_pool"]); $i++)
+                                <tr>
+                                    <th scope="row">{{ $question_pool["out_pool"][$i]["name"] }}</th>
+                                    <td>{{ $question_pool["out_pool"][$i]["question_count"] }}</td>
+                                    <td><a href="/quiz/question_pool/remove/{{ $question_pool['out_pool'][$i]['id'] }}" class="btn btn-danger">Remove</a></td>
+                                </tr>
+                                @endfor
+                            </tbody>
+                        </table>
+                    @else
+                         <p>All your questions are in the question pool!</p>
+                    @endif
+
+                    @else
+                         <p>You don't currently have any subjects. Feel free to add one, and get learning!</p>
+                    @endif
+
+                    <a href="/profile" class="btn btn-primary">Back</a>
+                    <a href="/quiz" class="btn btn-primary">To Quiz</a>
                 </div>
-
-                <a href="/quiz"><button>To Quiz</button></a>
             </div>
         </div>
     </div>
