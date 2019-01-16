@@ -37,6 +37,8 @@ Route::get('/topics/{topic}', 'PagesController@topic_questions')->name('topics.s
 
 Route::get('/topics', 'PagesController@topics');
 
+Route::post('/topic/score', 'PagesController@updateUserScores');
+
 Route::get('/quiz/question_pool', 'PagesController@question_pool');
 
 Route::get('/quiz/question_pool/add/{topic}', 'PagesController@add_to_pool');

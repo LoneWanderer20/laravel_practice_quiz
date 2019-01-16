@@ -12,4 +12,9 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+   .js('resources/js/quiz.js', 'public/js')
+   .sass('resources/sass/app.scss', 'public/css')
+   .styles([
+       'resources/css/quiz_app.css',
+       'resources/css/reset.css'
+   ], 'public/css/quiz.css');

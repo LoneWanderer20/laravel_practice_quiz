@@ -1,0 +1,347 @@
+@charset "utf-8";
+/* CSS Document */
+
+.quizCont {
+	width: 350px;
+	height: 367px;
+	position: relative;
+	top: 50px;
+	border: 3px solid #212121;
+	margin: 0 auto 70px auto;
+	//background-color: #E4FFF;
+	border-radius: 30px;
+  font-family: sans-serif;
+	font-weight: 700;
+  color: #000;
+	overflow: hidden;
+}
+.loginClass {
+	width: 100%;
+  margin: 12px 0;
+	display: block;
+	border: 1px solid #458fef;
+	box-sizing: border-box;
+	padding: 10px 15px;
+}
+label {
+	display: block;
+}
+.signUp {
+	display: block;
+	text-align: center;
+}
+.loginSubmit {
+	width: 100%;
+	height: 40px;
+	color: #FFF;
+	cursor: pointer;
+	background-color: #1111FF;
+	border: none;
+	margin: 12px 0;
+}
+.loginSubmit:hover {
+	opacity: 0.7;
+}
+.pickModules,.loginPage {
+	width: 100%;
+	height: 360px;
+	position: absolute;
+	top: 0;
+	border-radius: 28px;
+	background-color: #E4FFF1;
+	z-index: 4;
+}
+.loginPage {
+	padding: 30px 15px 0 15px;
+	width: 320px;
+	height: 337px;
+}
+.pickModules>div,.welcomeUser {
+	width: 100%;
+	height: 60px;
+	text-align: center;
+}
+.pickModules>div>p {
+	width: 280px;
+	font-size: 18px;
+	margin: 30px 35px;
+}
+.userPage {
+	position: absolute;
+	top: 0;
+	border-radius: 28px;
+	background-color: #E4FFF1;
+	z-index: 4;
+	width: 344px;
+	height: 360px;
+}
+.welcomeUser {
+	width: 320px;
+	height: 55px;
+	margin: 0 15px;
+}
+.welcomeUser>p {
+	margin-top: 30px;
+	font-size: 18px;
+}
+.userStats {
+	margin: 15px 0;
+	width: 320px;
+	height: 35px;
+	margin: 0 0 10px 10px;
+	position: relative;
+	border: 1px solid #000;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	overflow: hidden;
+}
+.moduleName {
+	font-weight: 700;
+	color: #fff;
+	width: 230px;
+	height: 28px;
+	position: absolute;
+	padding-top: 2px;
+	text-align: center;
+	background-color: #1111FF;
+}
+.redStat {
+	background-color: #fc1111;
+	width: 230px;
+	height: 7px;
+	position: absolute;
+	bottom: 0;
+}
+.greenStat {
+	background-color: #3b9e0e;
+	height: 7px;
+	position: absolute;
+	bottom: 0;
+}
+.percentage {
+	font-weight: 700;
+	width: 45px;
+	height: 35px;
+	padding-top: 5px;
+	text-align: center;
+	float: right;
+	color: #fff;
+	background-color: gray;
+	outline: 2px solid #fff;
+}
+.moduleButtons {
+	width: 158px;
+	height: 50px;
+	background-color: #1111FF;
+	border: 2px solid #FC1111;
+	border-radius: 15px;
+	color: #FC1111;
+	font-weight: 700;
+}
+.leftButtons {
+	margin: 8px 5px 8px 7px;
+}
+.rightButtons {
+	margin: 8px 7px 8px 5px;
+}
+.leftButtons:hover,.rightButtons:hover {
+	background-color: #4682B4;
+}
+.startButton {
+	display: block;
+	margin: 9px auto;
+	background-color: #3b9e0e;
+	border: 2px solid #2f7e0a;
+}
+.startButton:hover {
+	background-color: #4ac610;
+}
+.modulesCont {
+	width: 350px;
+	z-index: 3;
+	position: absolute;
+	bottom: 69px;
+}
+.questionCont {
+	padding: 20px;
+	text-align: center;
+	height: 221px;
+	border-bottom: 2px solid #212121;
+}
+.questionCont>p {
+	font-weight: 700;
+	margin-top: 50px;
+}
+.inputClass {
+	width: 50%;
+	height: 35px;
+	float: left;
+	text-align: center;
+	outline: 1px solid #212121;
+}
+.buttonClass, .dropDownButton {
+	background-color: #1111FF;
+	font-weight: 700;
+	color: #fff;
+}
+.bottomButton {
+	position: absolute;
+	height: 36px;
+	border: 1px solid #212121;
+	bottom: -1px;
+	outline: none;
+}
+.userBottomButton {
+	margin-top: 22px;
+	height: 36px;
+	border: 1px solid #212121;
+	outline: none;
+}
+.bottomLeft {
+	border-bottom-left-radius: 28px;
+	left: 0;
+}
+.bottomRight {
+	border-bottom-right-radius: 28px;
+	right: 0;
+}
+.modBottomButton {
+	position: absolute;
+	bottom: -2px;
+	height: 36px;
+	border: 1px solid #212121;
+	outline: none;
+}
+.buttonClass:hover {
+	background-color: #4682B4;
+}
+.dropDownButton:hover {
+	background-color: #4682B4;
+}
+.dropDownButton {
+	width: 344px;
+	height: 35px;
+	outline: 1px solid #212121;
+}
+.dropDownContent {
+	width: 350px;
+	background-color: #E4FFF1;
+	position: absolute;
+	border: 1px solid #212121;
+	margin-left: -1px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	display: none;
+}
+.topicClass {
+	width: 90%;
+	height: 20px;
+	padding-left: 10%;
+	margin: 7px 0;
+	font-weight: 700;
+	list-style: none;
+}
+.Btns1, .Btns2 {
+	width: 60px;
+	height: 20px;
+	margin-right: 20px;
+	float: right;
+	color: #fff;
+}
+.Btns1 {
+	background-color: "#fc1111";
+}
+.Btns2 {
+	background-color: "#3b9e0e";
+}
+.ratioClass {
+	width: 100%;
+	height: 35px;
+	text-align: center;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	position: absolute;
+	bottom: 35px;
+}
+.ratioClass>div {
+	width: 0;
+	height: 35px;
+}
+.ratioGreen {
+	position: relative;
+	bottom: 35px;
+	background-color: #3b9e0e;
+}
+.ratioRed {
+	background-color: #fc1111;
+}
+.ratioClass>p {
+	position: relative;
+	bottom: 62px;
+  color: #000;
+}
+.errorMessage {
+	width: 350px;
+	height: 20px;
+	position: relative;
+	font-weight: 700;
+	margin: 0 auto;
+	text-align: center;
+	color: red;
+}
+
+/*************** New Styles ***************/
+
+.module-buttons {
+	  width: 320px;
+		height: 35px;
+		border: 1px solid #000;
+		background-color: #1111FF;
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
+		margin: 0 0 10px 10px;
+}
+.module-buttons>p {
+	  float: left;
+		font-weight: 700;
+		color: #fff;
+		height: 22px;
+		margin: 6px 0 0 15px;
+}
+.add-button, .remove-button, .delete-button, .info-button {
+	  width: 25px;
+		height: 33px;
+		border: none;
+		border-left: 1px solid #000;
+	  float: right;
+		font-weight: 700;
+		color: #fff;
+}
+.add-button {
+	  background-color: green;
+}
+.remove-button {
+	  background-color: darkred;
+}
+.delete-button {
+	  background-color: gray;
+}
+.info-button {
+	  background-color: mediumblue;
+}
+.module-cont {
+	width: 360px;
+	height: 220px;
+	padding: 10px 0;
+	position: absolute;
+	bottom: 35px;
+	background: #fff;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	outline: 2px solid #000;
+}
+.hiddenData {
+	width: 0px;
+	height: 0px;
+	visibility: hidden;
+}

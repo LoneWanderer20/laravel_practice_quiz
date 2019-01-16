@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Topic;
 use App\Question;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\QuizScore;
+use App\Events\RemoveSubjectEvent;
 
 class PagesController extends Controller
 {
@@ -56,7 +55,9 @@ class PagesController extends Controller
 
         auth()->user()->topic()->detach($topic->id);
 
-        Mail::to(auth()->user())->send(new QuizScore($topic->name));
+        //Mail::to(auth()->user())->queue(new QuizScore($topic->name));
+
+        event(new RemoveSubjectEvent($topic->name));
 
         return redirect('topics')->with('success', 'You have removed a subject!');
     }
@@ -85,18 +86,33 @@ class PagesController extends Controller
 
     public function add_to_pool(Topic $topic)
     {
-        dd($topic);
+        auth()->user()->topic()->updateExistingPivot($topic, ['in_pool' => 1]);
+
+        return $this->question_pool();
     }
 
     public function remove_from_pool(Topic $topic)
     {
-        dd($topic);
+        auth()->user()->topic()->updateExistingPivot($topic, ['in_pool' => 0]);
+
+        return $this->question_pool();
     }
 
     public function quiz()
     {
-        return view('quiz');
+        $topics = auth()->user()->topic()->where('in_pool', 1)->get()->toArray();
+        $questions = collect([]);
+
+        foreach ($topics as $topic) {
+            $questions = $questions->merge(Question::where('topic_id', $topic["id"])->get());
+        }
+        return view('quiz', compact('questions'));
     }
 
+    public function updateUserScores(Request $request)
+    {
+        //$response = $request[topic-index][property key];
 
+        return response()->json($request);
+    }
 }
