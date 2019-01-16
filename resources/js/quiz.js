@@ -1,7 +1,5 @@
 let topicArray = {};
 
-console.log(questionPool);
-
 let setNextQuestionData = function(questionData) {
     //let parsedResponse = JSON.parse(response);
     //let questionData = parsedResponse[0];

@@ -1,5 +1,8 @@
 @extends('layouts.app')
 <link href="{{ asset('css/quiz.css') }}" rel="stylesheet">
+<script type="text\javascript">
+    let questionPool = {!! json_encode($questions) !!};
+</script>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -50,8 +53,8 @@
     </div>
 </div>
 
-<script type="text\javascript">
-    let questionPool = {!! json_encode($questions) !!};
+<script>
+    let questionPool = <?php echo json_encode($questions); ?>;
 </script>
 <script type="text/javascript" src="/js/quiz.js"></script>
 @endsection
