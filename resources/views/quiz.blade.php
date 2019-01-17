@@ -35,7 +35,7 @@
                                      <p id="ratio">Correct/Incorrect ratio:</p>
                                  </div>
 
-                                 <a  href="/quiz/question_pool">
+                                 <a  href="/quiz/questions">
                                      <input id="backButton" class="inputClass buttonClass bottomButton bottomLeft btn-primary" type="button" value="Back" />
                                  </a>
 

@@ -35,13 +35,8 @@
 
 
                     <a class="btn btn-primary" href="/topics">Back</a>
+                    <a  class="btn btn-danger" style="color: white;" href="/topics/remove/{{ $topic->id }}">Remove Topic</a>
 
-                    <form method="POST" action="{{ action('PagesController@remove_topic') }}" style="display: inline;">
-                        @method('PATCH')
-                        @csrf
-                        <input name="topic" type="hidden" value="{{ $topic }}" />
-                        <button type="submit" class="btn btn-danger" style="color: white;">Remove Topic</button>
-                    </form>
                 </div>
             </div>
         </div>

@@ -94,7 +94,6 @@ let incrementTopicCounts = function() {
     currentTopic.count = topicCount;
     currentTopic.right = topicRight;
     currentTopic.wrong = topicWrong;
-    console.log(currentTopic);
 }
 
 let setRatioBarWidth = function(rightCount, wrongCount) {

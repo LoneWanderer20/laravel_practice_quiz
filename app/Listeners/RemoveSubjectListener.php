@@ -28,6 +28,6 @@ class RemoveSubjectListener
      */
     public function handle(RemoveSubjectEvent $event)
     {
-        Mail::to(auth()->user())->queue(new QuizScore($event->topic));
+        Mail::to(auth()->user())->send(new QuizScore($event->topic));
     }
 }

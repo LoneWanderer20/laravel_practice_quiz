@@ -42,7 +42,7 @@
               <div class="card-body">
                 <h5 class="card-title">Revise</h5>
                 <p class="card-text">Use the quiz application to revise your subjects.</p>
-                <a href="/quiz/question_pool" class="btn btn-primary">Revise</a>
+                <a href="/quiz/questions" class="btn btn-primary">Revise</a>
               </div>
             </div>
         </div>

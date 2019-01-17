@@ -29,7 +29,7 @@
                                     <th scope="row">{{ $question_pool["in_pool"][$i]["name"] }}</th>
                                     <td>{{ $question_pool["in_pool"][$i]["question_count"] }}</td>
                                     <td>9</td>
-                                    <td><a href="/quiz/question_pool/remove/{{ $question_pool['in_pool'][$i]['id'] }}" class="btn btn-danger">Remove</a></td>
+                                    <td><a href="/quiz/questions/remove/{{ $question_pool['in_pool'][$i]['id'] }}" class="btn btn-danger">Remove</a></td>
                                 </tr>
                                 @endfor
                             </tbody>
@@ -53,7 +53,7 @@
                                 <tr>
                                     <th scope="row">{{ $question_pool["out_pool"][$i]["name"] }}</th>
                                     <td>{{ $question_pool["out_pool"][$i]["question_count"] }}</td>
-                                    <td><a href="/quiz/question_pool/add/{{ $question_pool['out_pool'][$i]['id'] }}" class="btn btn-success">Add</a></td>
+                                    <td><a href="/quiz/questions/add/{{ $question_pool['out_pool'][$i]['id'] }}" class="btn btn-success">Add</a></td>
                                 </tr>
                                 @endfor
                             </tbody>
